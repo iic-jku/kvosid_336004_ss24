@@ -1,2 +1,4 @@
-# kvosid_336004_ss24
-Course material for 336.004 (Prof. Pretl) in SS24 at JKU 
+# KV Open Source IC Design
+(c) 2024 Harald Pretl (harald.pretl@jku.at), IIC, JKU
+
+Course material for course 336.007 at the Johannes Kepler University Linz in the summer semester of 2023/24 is stored here.
