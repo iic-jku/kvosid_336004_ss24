@@ -61,9 +61,11 @@ def calc_rc_mfb_biquad(a0=1.0, wp=1e7, qp=1.0, k_c=50, c2=0.1e-12, use_a=True):
     if use_a:
         r1 = r1_a
         k_r3 = k_r3_a
+        print("Note: Solution a is used!")
     else:
         r1 = r1_b
         k_r3 = k_r3_b
+        print("Note: Solution b is used!")
 
     c1 = k_c * c2
     r2 = k_r2 * r1
