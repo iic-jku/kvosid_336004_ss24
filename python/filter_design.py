@@ -97,22 +97,22 @@ def main():
     area_max_umsq = (100e-6 * 200e-6) / 1e-12   # max available chip area
 
     osr = 10                                    # oversampling ratio
-    fpass = 100e3                               # -3dB corner frequency
-    fs = fpass*osr                              # sampling frequency of the ADC
-    fstop = fs / 2                              # start of stop band for filter approx.
-    apass_db = 6.02                             # Pass-band gain
-    apass = 10 ** (apass_db / 20.0)
-    astop_db = 50                               # Stop-band attenuation, only used by iirfilter() for Chebychev approx.
+    f_pass = 100e3                               # -3dB corner frequency
+    f_s = f_pass*osr                              # sampling frequency of the ADC
+    f_stop = f_s / 2                              # start of stop band for filter approx.
+    a_pass_db = 6.02                             # Pass-band gain
+    a_pass = 10 ** (a_pass_db / 20.0)
+    a_stop_db = 50                               # Stop-band attenuation, only used by iirfilter() for Chebychev approx.
     filter_approx = 'butter'                    # Select Butterworth low-pass approximation
     filter_type = 'low'                         # Select low-pass filter
     filter_ord = 3                              # Limit order of the filter prototype
 
-    wpass = 2 * pi * fpass
+    wpass = 2 * pi * f_pass
     # wstop = 2 * pi * fstop
-    wvec = 2*pi*np.logspace(np.log10(fpass)-2, np.log10(fstop)+2, 100)
+    wvec = 2*pi*np.logspace(np.log10(f_pass)-2, np.log10(f_stop)+2, 100)
 
     # Get Prototype coeff.
-    res = scs.iirfilter(filter_ord, wpass, btype=filter_type, rs=astop_db, analog=True, ftype=filter_approx, output='ba')
+    res = scs.iirfilter(filter_ord, wpass, btype=filter_type, rs=a_stop_db, analog=True, ftype=filter_approx, output='ba')
 
     # Unpack result in numerator polynom b and denominator polynom a
     b = res[0]
@@ -129,7 +129,7 @@ def main():
     # plt.title('Bode Plot of Prototype')
     plt.show(block=False)
 
-    plot_step_response(b, a, t_start=0, t_stop=5/fpass, t_step=0.01/fpass)
+    plot_step_response(b, a, t_start=0, t_stop=5/f_pass, t_step=0.01/f_pass)
 
     # Convert to second order sections
     biquads = scs.tf2sos(b, a, analog=True)
@@ -145,7 +145,7 @@ def main():
     a_coeff_proto_1 = a_coeff_proto_1 / a_coeff_proto_1[2]
 
     # Note: static gain of first stage is moved to second stage!
-    sys_biquad1 = TransferFunction([0, 0, apass], a_coeff_proto_1)
+    sys_biquad1 = TransferFunction([0, 0, a_pass], a_coeff_proto_1)
     plt.figure(4)
     pzmap(sys_biquad1)
     plt.title('Pole-Zero Map of 1. Biquad')
@@ -163,7 +163,7 @@ def main():
     print("fp = %0.2f" % (2 * pi * wp / 1e3), "kHz")
     print("Qp = %0.2f" % qp)
 
-    C1, C2, R1, R2, R3 = calc_rc_mfb_biquad(apass, wp, qp, k_c=20, c2=1e-12, use_a=True)
+    C1, C2, R1, R2, R3 = calc_rc_mfb_biquad(a_pass, wp, qp, k_c=20, c2=1e-12, use_a=True)
     print("R1 = %.3f" % (R1 / 1e6), "MOhm")
     print("R2 = %.3f" % (R2 / 1e6), "MOhm")
     print("R3 = %.3f" % (R3 / 1e6), "MOhm")
