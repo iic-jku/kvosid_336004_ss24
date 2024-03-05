@@ -1,0 +1,455 @@
+.save @m.xamp1.xmn1.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn1.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn1.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn1.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn1.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn1.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn1.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn1.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn1.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn2.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn2.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn2.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn2.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn2.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn2.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn2.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn2.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn2.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn3.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn3.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn3.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn3.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn3.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn3.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn3.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn3.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn3.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn4.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn4.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn4.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn4.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn4.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn4.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn4.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn4.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn4.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn5.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn5.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn5.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn5.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn5.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn5.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn5.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn5.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn5.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn6.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn6.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn6.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn6.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn6.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn6.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn6.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn6.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn6.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn7.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn7.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn7.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn7.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn7.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn7.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn7.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn7.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn7.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn8.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn8.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn8.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn8.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn8.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn8.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn8.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn8.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn8.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn9.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn9.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn9.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn9.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn9.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn9.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn9.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn9.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn9.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn10.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn10.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn10.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn10.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn10.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn10.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn10.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn10.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn10.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn11.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn11.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn11.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn11.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn11.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn11.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn11.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn11.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn11.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn12.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn12.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn12.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn12.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn12.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn12.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn12.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn12.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn12.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn13.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn13.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn13.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn13.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn13.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn13.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn13.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn13.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn13.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn14.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn14.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn14.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn14.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn14.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn14.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn14.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn14.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn14.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn15.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn15.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn15.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn15.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn15.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn15.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn15.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn15.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn15.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn16.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn16.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn16.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn16.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn16.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn16.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn16.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn16.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn16.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn17.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn17.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn17.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn17.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn17.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn17.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn17.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn17.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn17.msky130_fd_pr__nfet_01v8[cgg]
+
+.save @m.xamp1.xmn18.msky130_fd_pr__nfet_01v8[id]
+.save @m.xamp1.xmn18.msky130_fd_pr__nfet_01v8[vth]
+.save @m.xamp1.xmn18.msky130_fd_pr__nfet_01v8[vgs]
+.save @m.xamp1.xmn18.msky130_fd_pr__nfet_01v8[vds]
+.save @m.xamp1.xmn18.msky130_fd_pr__nfet_01v8[vdsat]
+.save @m.xamp1.xmn18.msky130_fd_pr__nfet_01v8[gm]
+.save @m.xamp1.xmn18.msky130_fd_pr__nfet_01v8[gds]
+.save @m.xamp1.xmn18.msky130_fd_pr__nfet_01v8[cgs]
+.save @m.xamp1.xmn18.msky130_fd_pr__nfet_01v8[cgg]
+
+
+
+
+
+.save @m.xamp1.xmpsw1.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmpsw1.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmpsw1.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmpsw1.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmpsw1.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmpsw1.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmpsw1.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmpsw1.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmpsw1.msky130_fd_pr__pfet_01v8[cgg]
+
+
+.save @m.xamp1.xmp1.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp1.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp1.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp1.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp1.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp1.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp1.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp1.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp1.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp2.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp2.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp2.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp2.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp2.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp2.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp2.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp2.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp2.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp3.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp3.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp3.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp3.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp3.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp3.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp3.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp3.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp3.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp4.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp4.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp4.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp4.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp4.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp4.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp4.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp4.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp4.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp5.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp5.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp5.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp5.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp5.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp5.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp5.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp5.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp5.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp6.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp6.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp6.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp6.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp6.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp6.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp6.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp6.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp6.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp7.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp7.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp7.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp7.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp7.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp7.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp7.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp7.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp7.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp8.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp8.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp8.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp8.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp8.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp8.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp8.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp8.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp8.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp9.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp9.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp9.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp9.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp9.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp9.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp9.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp9.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp9.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp10.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp10.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp10.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp10.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp10.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp10.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp10.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp10.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp10.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp11.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp11.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp11.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp11.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp11.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp11.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp11.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp11.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp11.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp12.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp12.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp12.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp12.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp12.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp12.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp12.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp12.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp12.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp13.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp13.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp13.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp13.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp13.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp13.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp13.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp13.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp13.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp14.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp14.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp14.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp14.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp14.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp14.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp14.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp14.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp14.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp15.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp15.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp15.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp15.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp15.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp15.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp15.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp15.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp15.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp16.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp16.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp16.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp16.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp16.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp16.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp16.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp16.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp16.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp17.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp17.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp17.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp17.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp17.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp17.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp17.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp17.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp17.msky130_fd_pr__pfet_01v8[cgg]
+
+.save @m.xamp1.xmp18.msky130_fd_pr__pfet_01v8[id]
+.save @m.xamp1.xmp18.msky130_fd_pr__pfet_01v8[vth]
+.save @m.xamp1.xmp18.msky130_fd_pr__pfet_01v8[vgs]
+.save @m.xamp1.xmp18.msky130_fd_pr__pfet_01v8[vds]
+.save @m.xamp1.xmp18.msky130_fd_pr__pfet_01v8[vdsat]
+.save @m.xamp1.xmp18.msky130_fd_pr__pfet_01v8[gm]
+.save @m.xamp1.xmp18.msky130_fd_pr__pfet_01v8[gds]
+.save @m.xamp1.xmp18.msky130_fd_pr__pfet_01v8[cgs]
+.save @m.xamp1.xmp18.msky130_fd_pr__pfet_01v8[cgg]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
