@@ -94,6 +94,22 @@ def estimate_rc_chip_area_sky130(r_tot=1e6, c_tot=10e-12):
             'umsq': {'R': a_rtot_umsq, 'C': a_ctot_umsq}}
 
 
+def adc_noise_spec(nbits=8, vref=0.9, vmax_pp=0.9, noise_margin_db=10, fmin=10e3, fmax=500e3):
+    vlsb = vref / 2**nbits
+    vqnoise = vlsb / np.sqrt(12)
+    sqnr = 6.02 * nbits + 1.76
+    vo_rms = vmax_pp / np.sqrt(2) / 2
+    vonoise = vqnoise / 10.0**(noise_margin_db / 20.0)
+    snr = 10*np.log10((vo_rms**2) / (vqnoise**2 + vonoise**2))
+
+    print("SQNR = %.2f" % sqnr, "dB")
+    print("SNR = %.2f" % snr, "dB")
+
+    vonoise_density = vonoise / np.sqrt(fmax-fmin)
+
+    return {'vno_density': vonoise_density, 'vnq_int': vqnoise, 'vno_int': vonoise, 'vlsb': vlsb}
+
+
 def main():
     # Define Filter Specs
     area_max_umsq = (100e-6 * 200e-6) / 1e-12   # max available chip area
@@ -297,7 +313,32 @@ def main():
     print("Amax = %0.2f" % area_max_umsq, "umsq")
 
     if area_tot_umsq > area_max_umsq:
-        raise ValueError("Design does not fit in available area!")
+        print("Note! Design does not fit in available area!")
+        # raise ValueError("Design does not fit in available area!")
+
+    print("Noise Calculations: System")
+    f_int_min = 10e3
+    f_int_max = f_stop
+    temp = 300
+    k_b = 1.38e-23
+    res = adc_noise_spec(nbits=4, noise_margin_db=18, fmin=f_int_min, fmax=f_int_max)
+    vn_o_density = res['vno_density']
+    Req = vn_o_density**2/(4*k_b*temp)
+
+    vn_amp_density_min = vn_o_density / 2 / (1 + R2 / R1)
+
+    print("Vno/sqrt(f) = %.2f" % (vn_o_density/1e-9), "nV/sqrt(Hz)")
+    print("Req_noise = %.2f" % (Req / 1e6), "MOhm")
+    print("Vno_amp/sqrt(f) = %.2f" % (vn_amp_density_min / 1e-9), "nV/sqrt(Hz)")
+
+    print("Gain Accuracy:")
+    beta = 1/a_pass
+    vlsb = res['vlsb']
+    vref = 0.9
+    err_gain = vlsb/vref
+    a_dc_min = 1/beta*(1/err_gain - 1)
+    a_dc_min_db = 20*np.log10(a_dc_min)
+    print("Adc_min_amp = %.2f" % a_dc_min_db, "dB")
 
 
 if __name__ == '__main__':
