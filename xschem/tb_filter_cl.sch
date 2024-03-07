@@ -7,10 +7,6 @@ S {}
 E {}
 N 1000 -240 1000 -220 {
 lab=vout1}
-N 1490 -660 1490 -640 {
-lab=voutn1}
-N 1490 -480 1490 -460 {
-lab=voutp1}
 N 400 -630 400 -590 {
 lab=vcmi}
 N 400 -530 400 -490 {
@@ -95,18 +91,14 @@ N 980 -410 980 -380 {
 lab=voutp1}
 N 840 -740 1160 -740 {
 lab=voutn1}
-N 1600 -610 1720 -610 {
-lab=voutn2}
-N 1600 -510 1720 -510 {
+N 1600 -600 1720 -600 {
 lab=voutp2}
-N 1720 -660 1720 -610 {
+N 1600 -520 1720 -520 {
 lab=voutn2}
-N 1720 -510 1720 -460 {
+N 1720 -650 1720 -600 {
 lab=voutp2}
-N 1640 -610 1640 -590 {
+N 1720 -520 1720 -470 {
 lab=voutn2}
-N 1640 -530 1640 -510 {
-lab=voutp2}
 N 930 -210 960 -210 {
 lab=voutp1}
 N 930 -170 960 -170 {
@@ -135,10 +127,6 @@ N 1000 -160 1000 -130 {
 lab=GND}
 N 1230 -160 1230 -130 {
 lab=GND}
-N 1490 -610 1540 -610 {
-lab=voutn1}
-N 1490 -510 1540 -510 {
-lab=voutp1}
 N 1020 -610 1040 -610 {
 lab=#net2}
 N 1020 -510 1040 -510 {
@@ -191,14 +179,6 @@ N 1430 -520 1430 -380 {
 lab=voutp1}
 N 1400 -520 1430 -520 {
 lab=voutp1}
-N 1430 -520 1490 -520 {
-lab=voutp1}
-N 1490 -520 1490 -480 {
-lab=voutp1}
-N 1430 -600 1490 -600 {
-lab=voutn1}
-N 1490 -640 1490 -600 {
-lab=voutn1}
 N 440 -240 440 -210 {
 lab=VDD}
 N 440 -150 440 -120 {
@@ -215,6 +195,22 @@ N 1140 -680 1140 -660 {
 lab=di_pon}
 N 1180 -450 1180 -420 {
 lab=GND}
+N 1430 -600 1460 -600 {
+lab=voutn1}
+N 1460 -600 1490 -520 {
+lab=voutn1}
+N 1490 -520 1540 -520 {
+lab=voutn1}
+N 1430 -520 1460 -520 {
+lab=voutp1}
+N 1460 -520 1490 -600 {
+lab=voutp1}
+N 1490 -600 1540 -600 {
+lab=voutp1}
+N 1640 -600 1640 -590 {
+lab=voutp2}
+N 1640 -530 1640 -520 {
+lab=voutn2}
 C {devices/vsource.sym} 480 -510 0 0 {name=V2 value=0.9
 }
 C {devices/vcvs.sym} 400 -460 0 0 {name=E1 value=0.5}
@@ -248,6 +244,7 @@ let f_stop = 500k
 let tper_sig = 1/f_sig
 let tfr_sig = tper_sig/2
 let Adc = 2
+let err_gain_spec = 0.004
 let v_step_o = 0.9
 let v_step_i = v_step_o/Adc
 
@@ -279,7 +276,7 @@ option numdgt=3
 	ac dec 100 $&const.f_min $&const.f_max
 	*set sqrnoise
 	noise v(vout) VIN dec 100 $&const.f_min $&const.f_max 1
-	noise v(vout) VIN dec 100 1 5Meg
+	noise v(vout) VIN dec 100 1 50Meg
 	alter @VIN[PULSE] = [ 0 $&v_step_i $&t_delay $&t_rf $&t_rf $&t_step $&t_per 0 ]
 	tran $&tstep $&tstop $&tstart
 		
@@ -292,18 +289,19 @@ option numdgt=3
 	let Aarg = 180/PI*cphase(A2)
 
 	let fdc = const.f_min+1
-	meas ac Adc find Amag_dB when frequency = fdc
-	let Amag_fc = Adc-3
+	meas ac Adc_ol_dB find Amag_dB when frequency = fdc
+	let Amag_fc = Adc_ol_dB-3
 	meas ac fc find frequency when Amag_dB = Amag_fc
 	meas ac Amin min_at Amag_dB from=const.f_min to=fc
 	meas ac Amax max Amag_dB
 	meas ac Astop find Amag_dB when frequency = const.f_stop
 	
 	meas ac fug find frequency when Amag_dB=0
-	let err_gain = 1-10^(Adc/20)/10
-	let Adc_ol_min = (1-err_gain)/err_gain
-	print err_gain
-	print Adc_ol_min
+	let err_gain_act = 1-10^(Adc_ol_dB/20)/Adc
+	let Adc_ol_min = Adc*(1-err_gain_spec)/err_gain_spec
+	let Adc_ol_min_dB = vdb(Adc_ol_min)
+	print err_gain_act*100
+	print Adc_ol_min_dB
 	plot Amag_dB Aarg ylabel 'Magnitude, Phase'
 
 	setplot noise1
@@ -316,24 +314,22 @@ option numdgt=3
 	plot onoise_spectrum r1 r2 r3 r4 ylog xlog ylabel 'Output Noise'
 	
 	setplot noise4
+	let p_noise_q = (1e-3)^2
 	let p_noise_o = onoise_total^2
-	let p_sig_o = v_step_o/sqrt(2)
-	let snr = p_sig_o/p_noise_o
+	let p_sig_o = (v_step_o/(2*sqrt(2)))^2
+	let snr = p_sig_o/(p_noise_o+p_noise_q)
 	let snr_dB = 10*log10(snr)
-
+	print snr_dB
 	
 	setplot tran4
 	let vid = v(vid)
-	let AsettleAcc = 20*log10((v_step_o/abs(vgnd))+1n)
 	let iop = viop#branch
 	let ion = vion#branch
 	let vcmo = (voutp1+voutn1)/2
 
-	plot iop ion
+	*plot iop ion
 
 	plot vid vout1 vout vcmo
-	settype decibel AsettleAcc
-	*plot AsettleAcc
 	plot v(vip) v(vin) v(voutp1) v(voutn1) vcmo
 
 
@@ -346,9 +342,9 @@ write tb_filter_cl.raw
 C {devices/gnd.sym} 480 -460 0 0 {name=l14 lab=GND}
 C {devices/vcvs.sym} 240 -560 0 0 {name=E3 value=1}
 C {devices/gnd.sym} 240 -410 0 0 {name=l15 lab=GND}
-C {devices/lab_pin.sym} 1720 -460 3 0 {name=l16 sig_type=std_logic lab=voutp2
+C {devices/lab_pin.sym} 1720 -650 1 0 {name=l16 sig_type=std_logic lab=voutp2
 }
-C {devices/lab_pin.sym} 1720 -660 3 1 {name=l17 sig_type=std_logic lab=voutn2
+C {devices/lab_pin.sym} 1720 -470 1 1 {name=l17 sig_type=std_logic lab=voutn2
 }
 C {devices/vcvs.sym} 1000 -190 0 0 {name=E4 value=1}
 C {devices/gnd.sym} 1000 -130 0 0 {name=l18 lab=GND}
@@ -407,12 +403,12 @@ m=1
 value=1p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/res.sym} 1570 -610 3 0 {name=R4
+C {devices/res.sym} 1570 -600 3 0 {name=R4
 value=800k
 footprint=1206
 device=resistor
 m=1}
-C {devices/res.sym} 1570 -510 3 0 {name=R41
+C {devices/res.sym} 1570 -520 3 0 {name=R41
 value=800k
 footprint=1206
 device=resistor
@@ -422,9 +418,9 @@ m=1
 value=1p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/lab_pin.sym} 1490 -460 3 0 {name=l10 sig_type=std_logic lab=voutp1
+C {devices/lab_pin.sym} 1430 -440 2 0 {name=l10 sig_type=std_logic lab=voutp1
 }
-C {devices/lab_pin.sym} 1490 -660 3 1 {name=l11 sig_type=std_logic lab=voutn1
+C {devices/lab_pin.sym} 1430 -680 0 1 {name=l11 sig_type=std_logic lab=voutn1
 }
 C {devices/lab_pin.sym} 1230 -240 0 1 {name=l12 sig_type=std_logic lab=vout}
 C {devices/vcvs.sym} 1230 -190 0 0 {name=E5 value=1}
