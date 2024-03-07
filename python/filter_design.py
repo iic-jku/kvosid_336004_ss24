@@ -235,7 +235,7 @@ def main():
     plt.show(block=False)
 
     # Estimate Chip Area for SKY130
-    CL = 5e-12
+    CL = 0
     r_vec = np.array([R1, R2, R3, R4])
     c_diff_vec = np.array([C1, C3])
     c_se_vec = np.array([C2, CL])
@@ -273,9 +273,11 @@ def main():
 
     rcm = 50e3
     ccm = 250e-15
+    cm = 800e-15
     rcm_tot = 4*rcm
     ccm_tot = 4*ccm
-    area_rc_cm = estimate_rc_chip_area_sky130(rcm_tot, ccm_tot)
+    cm_tot = 2*cm
+    area_rc_cm = estimate_rc_chip_area_sky130(rcm_tot, ccm_tot+cm_tot)
 
     area_amp_tot = area_bias + area_cmfb + area_stage1 + area_stage2 + area_rc_cm['msq']['R'] + area_rc_cm['msq']['C']
     area_amp_tot_umsq = area_amp_tot / 1e-12
