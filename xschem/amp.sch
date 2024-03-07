@@ -284,23 +284,23 @@ lab=vo1_n}
 N 1700 -400 1700 -280 {
 lab=vo1_n}
 N 1600 -670 1760 -670 {
-lab=#net1}
+lab=vfb2}
 N 1560 -520 1590 -520 {
 lab=VO_P}
 N 1560 -560 1590 -560 {
 lab=VO_P}
 N 1650 -560 1700 -560 {
-lab=#net1}
+lab=vfb2}
 N 1650 -520 1700 -520 {
-lab=#net1}
+lab=vfb2}
 N 1680 -550 1680 -530 {
-lab=#net1}
+lab=vfb2}
 N 1670 -560 1680 -550 {
-lab=#net1}
+lab=vfb2}
 N 1680 -570 1690 -560 {
-lab=#net1}
+lab=vfb2}
 N 1680 -670 1680 -570 {
-lab=#net1}
+lab=vfb2}
 N 1500 -540 1560 -540 {
 lab=VO_P}
 N 1800 -540 1860 -540 {
@@ -313,16 +313,16 @@ N 1460 -790 1640 -790 {
 lab=vbp}
 N 1350 -880 1680 -880 {
 lab=VDD}
-N 1680 -880 1680 -820 {
+N 2000 -880 2000 -820 {
 lab=VDD}
-N 1680 -790 1700 -790 {
+N 2000 -790 2020 -790 {
 lab=VDD}
-N 1700 -840 1700 -790 {
+N 2020 -840 2020 -790 {
 lab=VDD}
-N 1680 -840 1700 -840 {
+N 2000 -840 2020 -840 {
 lab=VDD}
 N 1670 -670 1680 -680 {
-lab=#net1}
+lab=vfb2}
 N 1800 -880 1800 -700 {
 lab=VDD}
 N 1680 -880 1800 -880 {
@@ -342,11 +342,11 @@ lab=VDD}
 N 1800 -720 1820 -720 {
 lab=VDD}
 N 1680 -530 1690 -520 {
-lab=#net1}
+lab=vfb2}
 N 1700 -520 1710 -520 {
-lab=#net1}
+lab=vfb2}
 N 1700 -560 1710 -560 {
-lab=#net1}
+lab=vfb2}
 N 1770 -560 1800 -560 {
 lab=VO_N}
 N 1770 -520 1800 -520 {
@@ -379,6 +379,50 @@ N 1700 -410 1700 -400 {
 lab=vo1_n}
 N 1670 -470 1800 -470 {
 lab=VO_N}
+N 1850 -880 2000 -880 {
+lab=VDD}
+N 1680 -720 1680 -680 {
+lab=vfb2}
+N 1640 -790 1910 -790 {
+lab=vbp}
+N 1910 -790 1960 -790 {
+lab=vbp}
+N 1800 -880 1850 -880 {
+lab=VDD}
+N 2000 -760 2000 -490 {
+lab=vbncm}
+N 1940 -460 1960 -460 {
+lab=vbncm}
+N 1950 -520 2000 -520 {
+lab=vbncm}
+N 1950 -520 1950 -460 {
+lab=vbncm}
+N 1900 -430 1900 -160 {
+lab=VSS}
+N 1800 -160 1900 -160 {
+lab=VSS}
+N 2000 -430 2000 -160 {
+lab=VSS}
+N 1900 -160 2000 -160 {
+lab=VSS}
+N 1690 -490 1900 -490 {
+lab=vfb2}
+N 1690 -510 1690 -490 {
+lab=vfb2}
+N 1690 -510 1700 -520 {
+lab=vfb2}
+N 1880 -460 1900 -460 {
+lab=VSS}
+N 1880 -460 1880 -400 {
+lab=VSS}
+N 1880 -400 1900 -400 {
+lab=VSS}
+N 2000 -460 2020 -460 {
+lab=VSS}
+N 2020 -460 2020 -400 {
+lab=VSS}
+N 2000 -400 2020 -400 {
+lab=VSS}
 C {sky130_fd_pr/pfet_01v8_nf.sym} 870 -790 0 1 {name=MP1
 L=0.25
 W=5
@@ -592,7 +636,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {sky130_fd_pr/pfet_01v8_nf.sym} 1660 -790 0 0 {name=MP3
+C {sky130_fd_pr/pfet_01v8_nf.sym} 1980 -790 0 0 {name=MP3
 L=0.25
 W=5
 nf=1
@@ -656,3 +700,33 @@ m=1
 value=0.5p
 footprint=1206
 device="ceramic capacitor"}
+C {devices/lab_pin.sym} 1680 -720 0 0 {name=p7 sig_type=std_logic lab=vfb2}
+C {sky130_fd_pr/nfet_01v8_nf.sym} 1980 -460 0 0 {name=MN5
+L=0.5
+W=3
+nf=5
+mult=1
+ad="'int((nf+1)/2) * W / nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W / nf + 0.29)'"
+as="'int((nf+2)/2) * W / nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W / nf + 0.29)'"
+nrd="'0.29 / W '" nrs="'0.29 / W '"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8_nf.sym} 1920 -460 0 1 {name=MN6
+L=0.5
+W=3
+nf=5
+mult=1
+ad="'int((nf+1)/2) * W / nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W / nf + 0.29)'"
+as="'int((nf+2)/2) * W / nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W / nf + 0.29)'"
+nrd="'0.29 / W '" nrs="'0.29 / W '"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {devices/lab_pin.sym} 2000 -630 0 1 {name=p12 sig_type=std_logic lab=vbncm}
