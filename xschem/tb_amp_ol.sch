@@ -188,8 +188,12 @@ if $doAmpSim eq 1
 
 	meas ac Adc_ol_dB max Amag_ol_dB
 	let Amag_fc = Adc_ol_dB-3
+
 	meas ac fc find frequency when Amag_ol_dB = Amag_fc
 	meas ac fug_ol find frequency when Amag_ol_dB=0
+	meas ac pm find Aarg_ol when frequency=fug_ol
+	let pm = 180 + pm
+	print pm
 
 	let Adc_ol_lin = 10^(Adc_ol_dB/20)
 	let err_gain = 1-Adc_ol_lin/(1+Adc_ol_lin)
