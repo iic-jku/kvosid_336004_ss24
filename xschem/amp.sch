@@ -12,8 +12,8 @@ T {CS-Stage} 1510 -140 0 0 0.4 0.4 {}
 T {CS-Stage} 1750 -140 0 0 0.4 0.4 {}
 T {Set Vcmo
 } 1970 -140 0 0 0.4 0.4 {}
-T {100u} 1530 -920 0 0 0.4 0.4 {}
-T {100u} 1770 -920 0 0 0.4 0.4 {}
+T {400u} 1530 -920 0 0 0.4 0.4 {}
+T {400u} 1770 -920 0 0 0.4 0.4 {}
 T {10u} 2060 -920 0 0 0.4 0.4 {}
 T {1:1} 2000 -400 0 0 0.4 0.4 {}
 N 850 -860 850 -820 {
@@ -638,7 +638,7 @@ C {devices/opin.sym} 1500 -680 0 1 {name=p7 lab=VO_N}
 C {sky130_fd_pr/nfet_01v8_nf.sym} 1540 -450 0 0 {name=MN3
 L=0.5
 W=3
-nf=5
+nf=20
 mult=1
 ad="'int((nf+1)/2) * W / nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W / nf + 0.29)'"
@@ -652,7 +652,7 @@ spiceprefix=X
 C {sky130_fd_pr/nfet_01v8_nf.sym} 1780 -450 0 0 {name=MN4
 L=0.5
 W=3
-nf=5
+nf=20
 mult=1
 ad="'int((nf+1)/2) * W / nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W / nf + 0.29)'"
@@ -666,7 +666,7 @@ spiceprefix=X
 C {sky130_fd_pr/pfet_01v8_nf.sym} 2070 -790 0 0 {name=MP3
 L=0.25
 W=5
-nf=1
+nf=2
 mult=1
 ad="'int((nf+1)/2) * W / nf * 0.29'"
 pd="'2*int((nf+1)/2) * (W / nf + 0.29)'"
@@ -763,11 +763,11 @@ spiceprefix=X
 }
 C {devices/capa.sym} 1470 -520 1 0 {name=C6
 m=1
-value=0.5p
+value=0.8p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/capa.sym} 1730 -510 1 0 {name=C7
 m=1
-value=0.5p
+value=0.8p
 footprint=1206
 device="ceramic capacitor"}
