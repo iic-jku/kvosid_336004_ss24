@@ -78,7 +78,7 @@ N 360 -590 440 -590 {
 lab=vcmi}
 N 520 -200 520 -170 {
 lab=GND}
-N 910 -470 910 -440 {
+N 920 -470 920 -440 {
 lab=GND}
 N 520 -790 520 -660 {
 lab=vin_p}
@@ -88,24 +88,10 @@ N 520 -500 520 -390 {
 lab=vin_n}
 N 520 -500 570 -500 {
 lab=vin_n}
-N 910 -710 910 -680 {
+N 920 -710 920 -680 {
 lab=VDD}
-N 1280 -630 1280 -610 {
-lab=vout}
-N 1280 -550 1280 -520 {
+N 810 -230 810 -200 {
 lab=GND}
-N 1210 -600 1240 -600 {
-lab=voutn1}
-N 1210 -560 1240 -560 {
-lab=voutp1}
-N 1210 -630 1210 -600 {
-lab=voutn1}
-N 1210 -560 1210 -530 {
-lab=voutp1}
-N 1130 -530 1210 -530 {
-lab=voutp1}
-N 1130 -630 1210 -630 {
-lab=voutn1}
 N 670 -660 720 -660 {
 lab=vi_p}
 N 720 -660 720 -620 {
@@ -119,29 +105,33 @@ lab=vi_n}
 N 720 -540 780 -540 {
 lab=vi_n}
 N 1050 -620 1100 -620 {
-lab=voutn1}
-N 1100 -630 1100 -620 {
-lab=voutn1}
-N 1100 -630 1130 -630 {
-lab=voutn1}
+lab=voutn}
 N 1050 -540 1100 -540 {
-lab=voutp1}
-N 1100 -540 1100 -530 {
-lab=voutp1}
-N 1100 -530 1130 -530 {
-lab=voutp1}
+lab=voutp}
 N 520 -300 520 -260 {
 lab=di_pon}
-N 870 -710 870 -680 {
+N 880 -710 880 -680 {
 lab=di_pon}
-N 1140 -530 1140 -500 {
-lab=voutp1}
-N 1140 -660 1140 -630 {
-lab=voutn1}
 N 1140 -440 1140 -420 {
 lab=GND}
 N 1140 -740 1140 -720 {
 lab=GND}
+N 1100 -540 1180 -540 {
+lab=voutp}
+N 1140 -540 1140 -500 {
+lab=voutp}
+N 1100 -620 1180 -620 {
+lab=voutn}
+N 1140 -660 1140 -620 {
+lab=voutn}
+N 740 -240 770 -240 {
+lab=voutn}
+N 740 -280 770 -280 {
+lab=voutp}
+N 810 -330 810 -290 {
+lab=vout}
+N 810 -330 860 -330 {
+lab=vout}
 C {devices/vsource.sym} 440 -230 0 0 {name=V3 value=1.8
 }
 C {devices/gnd.sym} 440 -170 0 0 {name=l4 lab=GND}
@@ -150,35 +140,24 @@ C {devices/code.sym} 60 -270 0 0 {name=STIMULI
 only_toplevel=false
 value="
 .include /foss/designs/amp_dev_sav.spice
-.param CL=100f
-.param CCM1=250f
-.param CCM2=250f
-.param VRREF=0.84
-.param SCALE=5
-.param IREF = \{5u*SCALE\}
-.param RREF = \{VRREF/IREF\}
-.param RCM = \{100k\}
-.param WP = 5
-.param WN = 3
-
 .options savecurrents
 
 .save all
 .control
-set doAmpSim = 0
+set doAmpSim = 1
 
 if $doAmpSim eq 1
 	setplot const
 	let f_min = 10
-	let f_max = 100Meg
+	let f_max = 1G
 	let f_stop = 500k
 
-	let Adc = 2
+	let Adc = 220
 	let v_step_o = 0.9
 	let v_step_i = -v_step_o/Adc
 
 	let t_rf = 0.01u
-	let t_step = 50u
+	let t_step = 5u
 	let t_delay = 0
 	let t_per = 2*t_step
 
@@ -207,32 +186,32 @@ if $doAmpSim eq 1
 	**let Amag_ol_dB_2 = vdb(A2)
 	**let Aarg_ol_2 = 180/PI*cphase(A2)
 
-	meas ac Amag_ol_dB max Amag_ol_dB
-	let Amag_fc = Adc-3
+	meas ac Adc_ol_dB max Amag_ol_dB
+	let Amag_fc = Adc_ol_dB-3
+
 	meas ac fc find frequency when Amag_ol_dB = Amag_fc
 	meas ac fug_ol find frequency when Amag_ol_dB=0
+	meas ac pm find Aarg_ol when frequency=fug_ol
+	let pm = 180 + pm
+	print pm
 
-	let Adc_ol_lin = 10^(Adc_ol/20)
+	let Adc_ol_lin = 10^(Adc_ol_dB/20)
 	let err_gain = 1-Adc_ol_lin/(1+Adc_ol_lin)
 	print err_gain*100
 
 	plot Amag_ol_dB Aarg_ol ylabel 'Open Loop Magnitude, Phase'
-	plot vdb(Acl) 180/PI*cphase(Acl)
 
 	setplot noise1
 	let acgain = onoise_spectrum/inoise_spectrum
-	plot inoise_spectrum ylog xlog
 	plot onoise_spectrum ylog xlog ylabel 'Output Noise'
+	*plot acgain
 
 	setplot noise2
-	let p_noise_o = onoise_total^2
-	let p_sig_o = v_step_o/sqrt(2)
-	let snr = p_sig_o/p_noise_o
-	let snr_dB = 10*log10(snr)
+	print onoise_total
 
 	setplot tran2
-	let vcmo = (v(voutp1)+v(voutn1))/2
-	plot v(vin_p) v(vin_n) v(voutp1) v(voutn1) vcmo
+	let vcmo = (v(voutp)+v(voutn))/2
+	plot v(vin_p) v(vin_n) v(voutp) v(voutn) vcmo
 end
 
 reset
@@ -341,8 +320,8 @@ C {devices/vsource.sym} 520 -230 0 0 {name=V4 value=1.8
 C {devices/gnd.sym} 520 -170 0 0 {name=l33 lab=GND}
 C {devices/lab_pin.sym} 520 -300 1 0 {name=p61 sig_type=std_logic lab=di_pon}
 C {devices/title.sym} 200 -80 0 0 {name=l3 author="Michael Koefinger"}
-C {devices/gnd.sym} 910 -440 0 0 {name=l5 lab=GND}
-C {devices/vdd.sym} 910 -710 0 0 {name=l6 lab=VDD}
+C {devices/gnd.sym} 920 -440 0 0 {name=l5 lab=GND}
+C {devices/vdd.sym} 920 -710 0 0 {name=l6 lab=VDD}
 C {devices/launcher.sym} 130 -130 0 0 {name=h1
 descr="Annotate OP"
 tclcommand="set show_hidden_texts 1; xschem annotate_op"}
@@ -402,20 +381,19 @@ C {devices/ngspice_get_value.sym} 1870 -465 0 0 {name=r103 node=@m.xamp1.xmp6.ms
 descr="cgs"}
 C {devices/lab_pin.sym} 660 -660 1 1 {name=p6 sig_type=std_logic lab=vi_p}
 C {devices/lab_pin.sym} 660 -500 3 1 {name=p7 sig_type=std_logic lab=vi_n}
-C {devices/lab_pin.sym} 1280 -630 0 1 {name=l49 sig_type=std_logic lab=vout}
-C {devices/vcvs.sym} 1280 -580 0 0 {name=E7 value=1}
-C {devices/gnd.sym} 1280 -520 0 0 {name=l50 lab=GND}
-C {devices/lab_pin.sym} 1210 -530 3 0 {name=l53 sig_type=std_logic lab=voutp1
+C {devices/vcvs.sym} 810 -260 0 0 {name=E7 value=1}
+C {devices/gnd.sym} 810 -200 0 0 {name=l50 lab=GND}
+C {devices/lab_pin.sym} 740 -280 0 0 {name=l53 sig_type=std_logic lab=voutp
 }
-C {devices/lab_pin.sym} 1210 -630 3 1 {name=l54 sig_type=std_logic lab=voutn1
+C {devices/lab_pin.sym} 740 -240 2 1 {name=l54 sig_type=std_logic lab=voutn
 }
 C {devices/capa.sym} 1140 -470 0 0 {name=CL2
 m=1
 value=1p
 footprint=1206
 device="ceramic capacitor"}
-C {/foss/designs/amp.sym} 760 -700 0 0 {name=xamp1}
-C {devices/lab_pin.sym} 870 -710 1 0 {name=p1 sig_type=std_logic lab=di_pon}
+C {/foss/designs/amp.sym} 740 -760 0 0 {name=xamp1}
+C {devices/lab_pin.sym} 880 -710 1 0 {name=p1 sig_type=std_logic lab=di_pon}
 C {devices/capa.sym} 1140 -690 2 0 {name=CL1
 m=1
 value=1p
@@ -423,3 +401,8 @@ footprint=1206
 device="ceramic capacitor"}
 C {devices/gnd.sym} 1140 -740 2 0 {name=l1 lab=GND}
 C {devices/gnd.sym} 1140 -420 0 0 {name=l7 lab=GND}
+C {devices/lab_pin.sym} 1180 -540 2 0 {name=l8 sig_type=std_logic lab=voutp
+}
+C {devices/lab_pin.sym} 1180 -620 0 1 {name=l9 sig_type=std_logic lab=voutn
+}
+C {devices/lab_pin.sym} 860 -330 0 1 {name=p2 sig_type=std_logic lab=vout}
