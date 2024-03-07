@@ -203,15 +203,11 @@ if $doAmpSim eq 1
 
 	setplot noise1
 	let acgain = onoise_spectrum/inoise_spectrum
-	*plot inoise_spectrum ylog xlog
 	plot onoise_spectrum ylog xlog ylabel 'Output Noise'
-	plot acgain
+	*plot acgain
 
 	setplot noise2
-	let p_noise_o = onoise_total^2
-	let p_sig_o = v_step_o/sqrt(2)
-	let snr = p_sig_o/p_noise_o
-	let snr_dB = 10*log10(snr)
+	print onoise_total
 
 	setplot tran2
 	let vcmo = (v(voutp)+v(voutn))/2
