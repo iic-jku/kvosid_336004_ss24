@@ -246,63 +246,38 @@ def main():
     area_rtot_umsq = res['umsq']['R']
     area_ctot_umsq = res['umsq']['C']
 
-    # Roughly estimate op-amp area based on
-    # Two-Stage Opamp /w Resistive common-mode feedback
-    # from [B. Razavi, The Design of a Biquadratic Filter. 2024]
-    # Wp = 100e-6
-    # Lp = 0.35e-6
-    # Wn1 = 100e-6
-    # Wn2 = 20e-6
-    # Ln = 0.15e-6
-    # Rcm = 40e3
-    # Rcm_tot = 4*Rcm
-    # A_Rcm = estimate_rc_chip_area_sky130(Rcm_tot, 0)
-    #
-    # Npmos = 4
-    # Nnmos1 = 2
-    # Nnmos2 = 2
-    # A_most = Npmos * Wp * Lp + Nnmos1 * Wn1 * Ln + Nnmos2 * Wn2 * Ln
-    # A_opamp = A_Rcm['msq']['R'] + A_most
-    # A_opamp_umsq = A_opamp / 1e-12
+    # Miller compenstated two-stage opamp
+    wp = 5e-6
+    lp_bias = 0.25e-6
+    lp_diff = 0.15e-6
+    lp_load = 0.5e-6
+    wn = 3e-6
+    ln_load = 1e-6
+    ln_cs = 0.5e-6
+    ln_cmfb = 0.5e-6
 
-    # Feedforward compenstated two-stage opamp
-    amp_scale = 5
-    Wp = 5e-6
-    Lp1 = 0.5e-6
-    Lp2 = 0.25e-6
-    Lp3 = 0.15e-6
-    Wn = 3e-6
-    Ln1 = 1e-6
-    Ln2 = 0.5e-6
-    Ln3 = 0.15e-6
-    Wn2 = 20e-6
-    Ln = 0.15e-6
+    nfp_bias_1 = 2
+    nfp_bias_2 = 20
+    nfp_bias_3 = 2
+    nfp_diff = 70
+    nfp_load = 5
 
-    NFpb = 5*amp_scale
-    NFntin = 5*amp_scale
-    NFntout = 5*NFntin
-    NFpl = 15*amp_scale
-    NFpd = 50*amp_scale
-    NFnd = 50*amp_scale
+    nfn_cmfb = 5
+    nfn_load = 6
+    nfn_cs = 20
 
-    NFpb2 = 10 * amp_scale
-    NFntin2 = 5 * amp_scale
-    NFntout2 = 10 * NFntin
-    NFpl2 = 60 * amp_scale
-    NFpd2 = 40 * amp_scale
-    NFnd2 = 15 * amp_scale
+    area_bias = wp*lp_bias*(1*nfp_bias_1+1*nfp_bias_2+1*nfp_bias_3)
+    area_cmfb = 2*wn*ln_cmfb*nfn_cmfb
+    area_stage1 = 2*wp*lp_diff*nfp_diff+2*wn*ln_load*nfn_load
+    area_stage2 = 2*wn*ln_cs*nfn_cs+2*wp*lp_load*nfp_load
 
-    area_bias = Wp*Lp1*(2*NFpb+1*NFpb2)
-    area_ota1 = Wp * Lp1 * NFpl + Wn * Ln1 * (NFntin + NFntout) + Wp * Lp2 * NFpd + Wn * Ln2 * NFnd
-    area_ota2 = Wp * Lp1 * NFpl2 + Wn * Ln1 * (NFntin2 + NFntout2) + Wp * Lp3 * NFpd2 + Wn * Ln3 * NFnd2
+    rcm = 50e3
+    ccm = 250e-15
+    rcm_tot = 4*rcm
+    ccm_tot = 4*ccm
+    area_rc_cm = estimate_rc_chip_area_sky130(rcm_tot, ccm_tot)
 
-    Rcm = 100e3
-    Ccm = 250e-15
-    Rcm_tot = 4*Rcm
-    Ccm_tot = 4*Ccm
-    area_rc_cm = estimate_rc_chip_area_sky130(Rcm_tot, Ccm_tot)
-
-    area_amp_tot = area_ota1 + area_ota2 + area_rc_cm['msq']['R'] + area_rc_cm['msq']['C']
+    area_amp_tot = area_bias + area_cmfb + area_stage1 + area_stage2 + area_rc_cm['msq']['R'] + area_rc_cm['msq']['C']
     area_amp_tot_umsq = area_amp_tot / 1e-12
 
     area_tot_umsq = area_rtot_umsq + area_ctot_umsq + area_amp_tot_umsq
