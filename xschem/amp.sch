@@ -267,9 +267,9 @@ lab=vo1_n}
 N 1600 -750 1760 -750 {
 lab=vfb2}
 N 1560 -570 1590 -570 {
-lab=VO_P}
+lab=VO_N}
 N 1560 -650 1590 -650 {
-lab=VO_P}
+lab=VO_N}
 N 1650 -650 1700 -650 {
 lab=vfb2}
 N 1650 -570 1700 -570 {
@@ -280,10 +280,10 @@ N 1670 -650 1680 -640 {
 lab=vfb2}
 N 1680 -660 1690 -650 {
 lab=vfb2}
-N 1500 -550 1560 -550 {
-lab=VO_P}
-N 1800 -540 1860 -540 {
+N 1500 -680 1560 -680 {
 lab=VO_N}
+N 1800 -680 1860 -680 {
+lab=VO_P}
 N 1350 -880 1680 -880 {
 lab=VDD}
 N 2090 -880 2090 -820 {
@@ -313,16 +313,12 @@ lab=vfb2}
 N 1700 -650 1710 -650 {
 lab=vfb2}
 N 1770 -650 1800 -650 {
-lab=VO_N}
+lab=VO_P}
 N 1770 -570 1800 -570 {
-lab=VO_N}
-N 1260 -440 1300 -440 {
+lab=VO_P}
+N 1250 -500 1290 -500 {
 lab=vo1_p}
-N 1250 -430 1260 -440 {
-lab=vo1_p}
-N 1010 -440 1060 -440 {
-lab=vo1_n}
-N 1060 -440 1070 -430 {
+N 1020 -500 1070 -500 {
 lab=vo1_n}
 N 1850 -880 2000 -880 {
 lab=VDD}
@@ -341,13 +337,13 @@ lab=VDD}
 N 1800 -880 1800 -780 {
 lab=VDD}
 N 1560 -720 1560 -600 {
-lab=VO_P}
+lab=VO_N}
 N 1800 -720 1800 -600 {
-lab=VO_N}
-N 1780 -510 1800 -510 {
-lab=VO_N}
-N 1540 -520 1560 -520 {
 lab=VO_P}
+N 1780 -510 1800 -510 {
+lab=VO_P}
+N 1540 -520 1560 -520 {
+lab=VO_N}
 N 1480 -450 1520 -450 {
 lab=vo1_p}
 N 1460 -520 1480 -520 {
@@ -357,23 +353,21 @@ lab=vo1_p}
 N 1460 -450 1480 -450 {
 lab=vo1_p}
 N 1560 -600 1560 -480 {
-lab=VO_P}
-N 1800 -600 1800 -480 {
 lab=VO_N}
+N 1800 -600 1800 -480 {
+lab=VO_P}
 N 1560 -420 1560 -160 {
 lab=VSS}
 N 1800 -420 1800 -160 {
 lab=VSS}
-N 1250 -380 1700 -380 {
-lab=vo1_p}
 N 1700 -450 1700 -380 {
-lab=vo1_p}
+lab=vo1_n}
 N 1700 -450 1760 -450 {
-lab=vo1_p}
+lab=vo1_n}
 N 1700 -510 1720 -510 {
-lab=vo1_p}
+lab=vo1_n}
 N 1700 -510 1700 -450 {
-lab=vo1_p}
+lab=vo1_n}
 N 1250 -450 1460 -450 {
 lab=vo1_p}
 N 2090 -760 2090 -480 {
@@ -434,6 +428,8 @@ N 2000 -820 2000 -790 {
 lab=vbp}
 N 2000 -790 2050 -790 {
 lab=vbp}
+N 1070 -380 1700 -380 {
+lab=vo1_n}
 C {sky130_fd_pr/pfet_01v8_nf.sym} 870 -790 0 1 {name=MP1
 L=0.25
 W=5
@@ -536,17 +532,17 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {devices/lab_pin.sym} 1010 -440 2 1 {name=l1 sig_type=std_logic lab=vo1_n
+C {devices/lab_pin.sym} 1020 -500 2 1 {name=l1 sig_type=std_logic lab=vo1_n
 }
-C {devices/lab_pin.sym} 1300 -440 0 1 {name=l9 sig_type=std_logic lab=vo1_p
+C {devices/lab_pin.sym} 1290 -500 0 1 {name=l9 sig_type=std_logic lab=vo1_p
 }
 C {devices/lab_pin.sym} 1160 -670 0 1 {name=p1 sig_type=std_logic lab=viref1}
-C {devices/iopin.sym} 120 -160 2 0 {name=p8 lab=VSS}
-C {devices/iopin.sym} 140 -880 2 0 {name=p9 lab=VDD}
-C {devices/ipin.sym} 980 -580 0 0 {name=p10 lab=VI_P}
-C {devices/ipin.sym} 120 -550 0 0 {name=p11 lab=di_pon}
-C {devices/ipin.sym} 1350 -580 2 0 {name=p6 lab=VI_N}
-C {sky130_fd_pr/cap_mim_m3_1.sym} 1300 -810 0 0 {name=C6 model=cap_mim_m3_1 W=5 L=5 MF=5 spiceprefix=X}
+C {devices/iopin.sym} 120 -160 2 0 {name=p2 lab=VSS}
+C {devices/iopin.sym} 140 -880 2 0 {name=p1 lab=VDD}
+C {devices/ipin.sym} 980 -580 0 0 {name=p4 lab=VI_P}
+C {devices/ipin.sym} 120 -550 0 0 {name=p3 lab=di_pon}
+C {devices/ipin.sym} 1350 -580 2 0 {name=p5 lab=VI_N}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 1300 -810 0 0 {name=C5 model=cap_mim_m3_1 W=5 L=5 MF=5 spiceprefix=X}
 C {sky130_fd_pr/pfet_01v8_nf.sym} 1050 -580 0 0 {name=MP4
 L=0.15
 W=5
@@ -617,8 +613,8 @@ C {devices/lab_pin.sym} 1160 -260 3 0 {name=p2 sig_type=std_logic lab=vfb1}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 1120 -440 3 0 {name=C1 model=cap_mim_m3_1 W=5 L=5 MF=5 spiceprefix=X}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 1200 -440 3 0 {name=C2 model=cap_mim_m3_1 W=5 L=5 MF=5 spiceprefix=X}
 C {devices/isource.sym} 850 -300 0 0 {name=I0 value=25u}
-C {devices/opin.sym} 1500 -550 0 1 {name=p3 lab=VO_P}
-C {devices/opin.sym} 1860 -540 0 0 {name=p4 lab=VO_N}
+C {devices/opin.sym} 1860 -680 0 0 {name=p6 lab=VO_P}
+C {devices/opin.sym} 1500 -680 0 1 {name=p7 lab=VO_N}
 C {sky130_fd_pr/nfet_01v8_nf.sym} 1540 -450 0 0 {name=MN3
 L=0.5
 W=3
@@ -701,16 +697,6 @@ device=resistor
 m=1}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 1620 -650 3 0 {name=C3 model=cap_mim_m3_1 W=5 L=5 MF=5 spiceprefix=X}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 1740 -650 3 0 {name=C4 model=cap_mim_m3_1 W=5 L=5 MF=5 spiceprefix=X}
-C {devices/capa.sym} 1510 -520 1 0 {name=C5
-m=1
-value=0.5p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/capa.sym} 1750 -510 1 0 {name=C7
-m=1
-value=0.5p
-footprint=1206
-device="ceramic capacitor"}
 C {devices/lab_pin.sym} 1680 -780 0 0 {name=p7 sig_type=std_logic lab=vfb2}
 C {sky130_fd_pr/nfet_01v8_nf.sym} 2070 -450 0 0 {name=MN5
 L=0.5
@@ -741,3 +727,13 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {devices/lab_pin.sym} 2090 -630 0 1 {name=p12 sig_type=std_logic lab=vbncm}
+C {devices/capa.sym} 1510 -520 1 0 {name=C6
+m=1
+value=0.1p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/capa.sym} 1750 -510 1 0 {name=C7
+m=1
+value=0.1p
+footprint=1206
+device="ceramic capacitor"}
