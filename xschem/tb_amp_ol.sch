@@ -187,7 +187,7 @@ if $doAmpSim eq 1
 	**let Aarg_ol_2 = 180/PI*cphase(A2)
 
 	meas ac Adc_ol_dB max Amag_ol_dB
-	let Amag_fc = Adc-3
+	let Amag_fc = Adc_ol_dB-3
 	meas ac fc find frequency when Amag_ol_dB = Amag_fc
 	meas ac fug_ol find frequency when Amag_ol_dB=0
 
