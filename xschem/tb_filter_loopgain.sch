@@ -7,10 +7,6 @@ S {}
 E {}
 N 1000 -240 1000 -220 {
 lab=vout1}
-N 1830 -660 1830 -640 {
-lab=voutn1}
-N 1830 -480 1830 -460 {
-lab=voutp1}
 N 330 -630 330 -590 {
 lab=vcmi}
 N 330 -530 330 -490 {
@@ -95,18 +91,6 @@ N 980 -410 980 -380 {
 lab=voutp1}
 N 840 -740 1160 -740 {
 lab=voutn1}
-N 1940 -610 2060 -610 {
-lab=voutn2}
-N 1940 -510 2060 -510 {
-lab=voutp2}
-N 2060 -660 2060 -610 {
-lab=voutn2}
-N 2060 -510 2060 -460 {
-lab=voutp2}
-N 1980 -610 1980 -590 {
-lab=voutn2}
-N 1980 -530 1980 -510 {
-lab=voutp2}
 N 930 -210 960 -210 {
 lab=voutp1}
 N 930 -170 960 -170 {
@@ -135,10 +119,6 @@ N 1000 -160 1000 -130 {
 lab=GND}
 N 1230 -160 1230 -130 {
 lab=GND}
-N 1830 -610 1880 -610 {
-lab=voutn1}
-N 1830 -510 1880 -510 {
-lab=voutp1}
 N 980 -620 990 -610 {
 lab=vr_n}
 N 980 -500 990 -510 {
@@ -213,10 +193,6 @@ N 1250 -740 1770 -740 {
 lab=voutn1}
 N 410 -560 680 -560 {
 lab=vcmi}
-N 1830 -510 1830 -480 {
-lab=voutp1}
-N 1830 -640 1830 -610 {
-lab=voutn1}
 N 1180 -610 1220 -610 {
 lab=vi_opa_p}
 N 1220 -610 1220 -600 {
@@ -239,11 +215,7 @@ N 1770 -520 1770 -380 {
 lab=voutp1}
 N 1770 -520 1830 -520 {
 lab=voutp1}
-N 1830 -520 1830 -510 {
-lab=voutp1}
 N 1770 -600 1830 -600 {
-lab=voutn1}
-N 1830 -610 1830 -600 {
 lab=voutn1}
 N 420 -250 420 -220 {
 lab=VDD}
@@ -259,6 +231,26 @@ N 1360 -680 1360 -660 {
 lab=VDD}
 N 1320 -670 1320 -660 {
 lab=di_pon}
+N 1970 -600 2090 -600 {
+lab=voutp2}
+N 1970 -520 2090 -520 {
+lab=voutn2}
+N 2090 -650 2090 -600 {
+lab=voutp2}
+N 2090 -520 2090 -470 {
+lab=voutn2}
+N 1830 -600 1860 -520 {
+lab=voutn1}
+N 1860 -520 1910 -520 {
+lab=voutn1}
+N 1830 -520 1860 -600 {
+lab=voutp1}
+N 1860 -600 1910 -600 {
+lab=voutp1}
+N 2010 -600 2010 -590 {
+lab=voutp2}
+N 2010 -530 2010 -520 {
+lab=voutn2}
 C {devices/vsource.sym} 410 -510 0 0 {name=V2 value=0.9
 }
 C {devices/vcvs.sym} 330 -460 0 0 {name=E1 value=0.5}
@@ -366,10 +358,6 @@ write tb_filter_loopgain.raw
 C {devices/gnd.sym} 410 -460 0 0 {name=l14 lab=GND}
 C {devices/vcvs.sym} 170 -560 0 0 {name=E3 value=1}
 C {devices/gnd.sym} 170 -410 0 0 {name=l15 lab=GND}
-C {devices/lab_pin.sym} 2060 -460 3 0 {name=l16 sig_type=std_logic lab=voutp2
-}
-C {devices/lab_pin.sym} 2060 -660 3 1 {name=l17 sig_type=std_logic lab=voutn2
-}
 C {devices/vcvs.sym} 1000 -190 0 0 {name=E4 value=1}
 C {devices/gnd.sym} 1000 -130 0 0 {name=l18 lab=GND}
 C {devices/title.sym} 160 -40 0 0 {name=l22 author="Michael Koefinger"}
@@ -427,24 +415,9 @@ m=1
 value=1p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/res.sym} 1910 -610 3 0 {name=R4
-value=800k
-footprint=1206
-device=resistor
-m=1}
-C {devices/res.sym} 1910 -510 3 0 {name=R41
-value=800k
-footprint=1206
-device=resistor
-m=1}
-C {devices/capa.sym} 1980 -560 0 0 {name=C2
-m=1
-value=1p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/lab_pin.sym} 1830 -460 3 0 {name=l10 sig_type=std_logic lab=voutp1
+C {devices/lab_pin.sym} 1770 -440 2 0 {name=l10 sig_type=std_logic lab=voutp1
 }
-C {devices/lab_pin.sym} 1830 -660 3 1 {name=l11 sig_type=std_logic lab=voutn1
+C {devices/lab_pin.sym} 1770 -670 0 1 {name=l11 sig_type=std_logic lab=voutn1
 }
 C {devices/lab_pin.sym} 1230 -240 0 1 {name=l12 sig_type=std_logic lab=vout}
 C {devices/vcvs.sym} 1230 -190 0 0 {name=E5 value=1}
@@ -508,3 +481,22 @@ C {devices/gnd.sym} 500 -130 0 0 {name=l33 lab=GND}
 C {devices/lab_pin.sym} 500 -260 1 0 {name=p61 sig_type=std_logic lab=di_pon}
 C {devices/vdd.sym} 1360 -680 0 0 {name=l26 lab=VDD}
 C {devices/lab_pin.sym} 1320 -670 1 0 {name=p5 sig_type=std_logic lab=di_pon}
+C {devices/lab_pin.sym} 2090 -650 1 0 {name=l27 sig_type=std_logic lab=voutp2
+}
+C {devices/lab_pin.sym} 2090 -470 1 1 {name=l29 sig_type=std_logic lab=voutn2
+}
+C {devices/capa.sym} 2010 -560 0 0 {name=C4
+m=1
+value=1p
+footprint=1206
+device="ceramic capacitor"}
+C {devices/res.sym} 1940 -600 3 0 {name=R5
+value=800k
+footprint=1206
+device=resistor
+m=1}
+C {devices/res.sym} 1940 -520 3 0 {name=R6
+value=800k
+footprint=1206
+device=resistor
+m=1}
