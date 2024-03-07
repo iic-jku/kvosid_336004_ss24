@@ -134,8 +134,6 @@ N 120 -160 160 -160 {
 lab=VSS}
 N 520 -550 580 -550 {
 lab=pon}
-N 340 -550 340 -520 {
-lab=pon_b}
 N 140 -880 820 -880 {
 lab=VDD}
 N 230 -460 230 -160 {
@@ -228,10 +226,6 @@ N 1150 -290 1160 -300 {
 lab=vfb1}
 N 1240 -350 1250 -350 {
 lab=vo1_p}
-N 850 -500 850 -330 {
-lab=vbp}
-N 850 -270 850 -160 {
-lab=VSS}
 N 1100 -740 1300 -740 {
 lab=vbp}
 N 420 -160 470 -160 {
@@ -340,15 +334,7 @@ N 1560 -720 1560 -600 {
 lab=VO_N}
 N 1800 -720 1800 -600 {
 lab=VO_P}
-N 1780 -510 1800 -510 {
-lab=VO_P}
-N 1540 -520 1560 -520 {
-lab=VO_N}
 N 1480 -450 1520 -450 {
-lab=vo1_p}
-N 1460 -520 1480 -520 {
-lab=vo1_p}
-N 1460 -520 1460 -450 {
 lab=vo1_p}
 N 1460 -450 1480 -450 {
 lab=vo1_p}
@@ -360,13 +346,7 @@ N 1560 -420 1560 -160 {
 lab=VSS}
 N 1800 -420 1800 -160 {
 lab=VSS}
-N 1700 -450 1700 -380 {
-lab=vo1_n}
 N 1700 -450 1760 -450 {
-lab=vo1_n}
-N 1700 -510 1720 -510 {
-lab=vo1_n}
-N 1700 -510 1700 -450 {
 lab=vo1_n}
 N 1250 -450 1460 -450 {
 lab=vo1_p}
@@ -428,8 +408,48 @@ N 2000 -820 2000 -790 {
 lab=vbp}
 N 2000 -790 2050 -790 {
 lab=vbp}
-N 1070 -380 1700 -380 {
+N 340 -600 340 -560 {
+lab=pon_b}
+N 340 -560 350 -550 {
+lab=pon_b}
+N 850 -440 850 -320 {
+lab=#net1}
+N 850 -260 850 -160 {
+lab=VSS}
+N 850 -290 870 -290 {
+lab=VSS}
+N 870 -290 870 -240 {
+lab=VSS}
+N 850 -240 870 -240 {
+lab=VSS}
+N 600 -550 650 -550 {
+lab=pon}
+N 590 -550 600 -550 {
+lab=pon}
+N 580 -560 590 -550 {
+lab=pon}
+N 580 -520 580 -290 {
+lab=pon}
+N 580 -290 810 -290 {
+lab=pon}
+N 1500 -520 1560 -520 {
+lab=VO_N}
+N 1670 -450 1700 -450 {
 lab=vo1_n}
+N 1070 -380 1670 -380 {
+lab=vo1_n}
+N 1760 -510 1800 -510 {
+lab=VO_P}
+N 1670 -450 1670 -380 {
+lab=vo1_n}
+N 1670 -510 1700 -510 {
+lab=vo1_n}
+N 1670 -510 1670 -450 {
+lab=vo1_n}
+N 1410 -520 1440 -520 {
+lab=vo1_p}
+N 1410 -520 1410 -450 {
+lab=vo1_p}
 C {sky130_fd_pr/pfet_01v8_nf.sym} 870 -790 0 1 {name=MP1
 L=0.25
 W=5
@@ -473,7 +493,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {devices/lab_pin.sym} 340 -520 1 1 {name=p60 sig_type=std_logic lab=pon_b}
+C {devices/lab_pin.sym} 340 -600 1 0 {name=p60 sig_type=std_logic lab=pon_b}
 C {sky130_fd_pr/pfet_01v8_nf.sym} 210 -600 0 0 {name=MPSW1
 L=0.15
 W=5
@@ -502,7 +522,7 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {devices/lab_pin.sym} 580 -520 1 1 {name=p17 sig_type=std_logic lab=pon}
+C {devices/lab_pin.sym} 650 -550 0 1 {name=p17 sig_type=std_logic lab=pon}
 C {devices/title.sym} 200 -80 0 0 {name=l3 author="Michael Koefinger"}
 C {sky130_fd_pr/pfet_01v8_nf.sym} 450 -600 0 0 {name=MPSW2
 L=0.15
@@ -546,7 +566,7 @@ C {sky130_fd_pr/cap_mim_m3_1.sym} 1300 -810 0 0 {name=C5 model=cap_mim_m3_1 W=5 
 C {sky130_fd_pr/pfet_01v8_nf.sym} 1050 -580 0 0 {name=MP4
 L=0.15
 W=5
-nf=60
+nf=70
 mult=1
 ad="'int((nf+1)/2) * W / nf * 0.29'"
 pd="'2*int((nf+1)/2) * (W / nf + 0.29)'"
@@ -560,7 +580,7 @@ spiceprefix=X
 C {sky130_fd_pr/pfet_01v8_nf.sym} 1270 -580 0 1 {name=MP5
 L=0.15
 W=5
-nf=60
+nf=70
 mult=1
 ad="'int((nf+1)/2) * W / nf * 0.29'"
 pd="'2*int((nf+1)/2) * (W / nf + 0.29)'"
@@ -612,7 +632,7 @@ m=1}
 C {devices/lab_pin.sym} 1160 -260 3 0 {name=p2 sig_type=std_logic lab=vfb1}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 1120 -440 3 0 {name=C1 model=cap_mim_m3_1 W=5 L=5 MF=5 spiceprefix=X}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 1200 -440 3 0 {name=C2 model=cap_mim_m3_1 W=5 L=5 MF=5 spiceprefix=X}
-C {devices/isource.sym} 850 -300 0 0 {name=I0 value=25u}
+C {devices/isource.sym} 850 -470 0 0 {name=I0 value=25u}
 C {devices/opin.sym} 1860 -680 0 0 {name=p6 lab=VO_P}
 C {devices/opin.sym} 1500 -680 0 1 {name=p7 lab=VO_N}
 C {sky130_fd_pr/nfet_01v8_nf.sym} 1540 -450 0 0 {name=MN3
@@ -727,13 +747,27 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {devices/lab_pin.sym} 2090 -630 0 1 {name=p12 sig_type=std_logic lab=vbncm}
-C {devices/capa.sym} 1510 -520 1 0 {name=C6
+C {sky130_fd_pr/nfet_01v8_nf.sym} 830 -290 0 0 {name=MNSW3
+L=0.15
+W=3
+nf=5
+mult=1
+ad="'int((nf+1)/2) * W / nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W / nf + 0.29)'"
+as="'int((nf+2)/2) * W / nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W / nf + 0.29)'"
+nrd="'0.29 / W '" nrs="'0.29 / W '"
+sa=0 sb=0 sd=0
+model=nfet_01v8
+spiceprefix=X
+}
+C {devices/capa.sym} 1470 -520 1 0 {name=C6
 m=1
-value=0.1p
+value=0.5p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/capa.sym} 1750 -510 1 0 {name=C7
+C {devices/capa.sym} 1730 -510 1 0 {name=C7
 m=1
-value=0.1p
+value=0.5p
 footprint=1206
 device="ceramic capacitor"}
