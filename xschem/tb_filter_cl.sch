@@ -280,6 +280,8 @@ if $opSimOnly eq 0
 	noise v(vout) VIN dec 100 $&const.f_min $&const.f_max 1
 	noise v(vout) VIN dec 100 1 50Meg
 	alter @VIN[PULSE] = [ 0 $&v_step_i $&t_delay $&t_rf $&t_rf $&t_step $&t_per 0 ]
+	** Check power on by ramping Vdd
+	*alter @V1[PULSE] = [ 0 1.8 0 10u $&t_rf 0 0 0 ]
 	tran $&tstep $&tstop $&tstart
 		
 	setplot ac1
@@ -436,11 +438,11 @@ C {devices/vsource.sym} 1370 -600 3 0 {name=VIOP value=0
 C {devices/vsource.sym} 1370 -520 3 1 {name=VION value=0
 }
 C {/foss/designs/amp.sym} 1000 -740 0 0 {name=xamp1}
-C {devices/vsource.sym} 440 -180 0 0 {name=V3 value=1.8
+C {devices/vsource.sym} 440 -180 0 0 {name=V1 value=1.8
 }
 C {devices/gnd.sym} 440 -120 0 0 {name=l4 lab=GND}
 C {devices/vdd.sym} 440 -250 0 0 {name=l2 lab=VDD}
-C {devices/vsource.sym} 520 -180 0 0 {name=V4 value=1.8
+C {devices/vsource.sym} 520 -180 0 0 {name=V3 value=1.8
 }
 C {devices/gnd.sym} 520 -120 0 0 {name=l33 lab=GND}
 C {devices/lab_pin.sym} 520 -250 1 0 {name=p61 sig_type=std_logic lab=di_pon}
