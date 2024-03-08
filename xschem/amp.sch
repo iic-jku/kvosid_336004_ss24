@@ -14,8 +14,8 @@ T {Set Vcmo
 } 1970 -140 0 0 0.4 0.4 {}
 T {400u} 1530 -920 0 0 0.4 0.4 {}
 T {400u} 1770 -920 0 0 0.4 0.4 {}
-T {10u} 2060 -920 0 0 0.4 0.4 {}
-T {1:1} 2000 -400 0 0 0.4 0.4 {}
+T {25u} 2060 -920 0 0 0.4 0.4 {}
+T {4:5} 2000 -400 0 0 0.4 0.4 {}
 N 850 -860 850 -820 {
 lab=VDD}
 N 830 -790 850 -790 {
@@ -620,12 +620,12 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {devices/res.sym} 1110 -350 3 0 {name=R1
-value=50k
+value=64k
 footprint=1206
 device=resistor
 m=1}
 C {devices/res.sym} 1210 -350 3 0 {name=R3
-value=50k
+value=64k
 footprint=1206
 device=resistor
 m=1}
@@ -705,12 +705,12 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {devices/res.sym} 1620 -570 3 0 {name=R2
-value=50k
+value=64k
 footprint=1206
 device=resistor
 m=1}
 C {devices/res.sym} 1740 -570 3 0 {name=R4
-value=50k
+value=64k
 footprint=1206
 device=resistor
 m=1}
@@ -734,7 +734,7 @@ spiceprefix=X
 C {sky130_fd_pr/nfet_01v8_nf.sym} 1970 -450 0 1 {name=MN6
 L=0.5
 W=3
-nf=5
+nf=4
 mult=1
 ad="'int((nf+1)/2) * W / nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W / nf + 0.29)'"
