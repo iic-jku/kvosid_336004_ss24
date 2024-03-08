@@ -16,6 +16,9 @@ T {400u} 1530 -920 0 0 0.4 0.4 {}
 T {400u} 1770 -920 0 0 0.4 0.4 {}
 T {25u} 2060 -920 0 0 0.4 0.4 {}
 T {4:5} 2000 -400 0 0 0.4 0.4 {}
+T {1:10} 990 -770 0 0 0.4 0.4 {}
+T {PON Buffer} 290 -140 0 0 0.4 0.4 {}
+T {IREF} 820 -140 0 0 0.4 0.4 {}
 N 850 -860 850 -820 {
 lab=VDD}
 N 830 -790 850 -790 {
@@ -432,23 +435,23 @@ N 580 -520 580 -290 {
 lab=pon}
 N 580 -290 810 -290 {
 lab=pon}
-N 1500 -520 1560 -520 {
-lab=VO_N}
 N 1670 -450 1700 -450 {
 lab=vo1_n}
 N 1070 -380 1670 -380 {
 lab=vo1_n}
-N 1760 -510 1800 -510 {
+N 1760 -520 1800 -520 {
 lab=VO_P}
 N 1670 -450 1670 -380 {
 lab=vo1_n}
-N 1670 -510 1700 -510 {
+N 1670 -520 1700 -520 {
 lab=vo1_n}
-N 1670 -510 1670 -450 {
+N 1670 -520 1670 -450 {
 lab=vo1_n}
-N 1410 -520 1440 -520 {
+N 1520 -520 1560 -520 {
+lab=VO_N}
+N 1430 -520 1460 -520 {
 lab=vo1_p}
-N 1410 -520 1410 -450 {
+N 1430 -520 1430 -450 {
 lab=vo1_p}
 C {sky130_fd_pr/pfet_01v8_nf.sym} 870 -790 0 1 {name=MP1
 L=0.25
@@ -523,7 +526,7 @@ model=nfet_01v8
 spiceprefix=X
 }
 C {devices/lab_pin.sym} 650 -550 0 1 {name=p17 sig_type=std_logic lab=pon}
-C {devices/title.sym} 200 -80 0 0 {name=l3 author="Michael Koefinger"}
+C {devices/title.sym} 200 -60 0 0 {name=l3 author="Michael Koefinger"}
 C {sky130_fd_pr/pfet_01v8_nf.sym} 450 -600 0 0 {name=MPSW2
 L=0.15
 W=5
@@ -760,12 +763,12 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {devices/capa.sym} 1470 -520 1 0 {name=C6
+C {devices/capa.sym} 1490 -520 1 0 {name=C6
 m=1
 value=0.8p
 footprint=1206
 device="ceramic capacitor"}
-C {devices/capa.sym} 1730 -510 1 0 {name=C7
+C {devices/capa.sym} 1730 -520 1 0 {name=C7
 m=1
 value=0.8p
 footprint=1206
