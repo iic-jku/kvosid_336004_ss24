@@ -413,7 +413,7 @@ lab=pon_b}
 N 340 -560 350 -550 {
 lab=pon_b}
 N 850 -440 850 -320 {
-lab=#net1}
+lab=vrref_sw}
 N 850 -260 850 -160 {
 lab=VSS}
 N 850 -290 870 -290 {
@@ -632,7 +632,6 @@ m=1}
 C {devices/lab_pin.sym} 1160 -260 3 0 {name=p2 sig_type=std_logic lab=vfb1}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 1120 -440 3 0 {name=C1 model=cap_mim_m3_1 W=5 L=5 MF=5 spiceprefix=X}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 1200 -440 3 0 {name=C2 model=cap_mim_m3_1 W=5 L=5 MF=5 spiceprefix=X}
-C {devices/isource.sym} 850 -470 0 0 {name=I0 value=25u}
 C {devices/opin.sym} 1860 -680 0 0 {name=p6 lab=VO_P}
 C {devices/opin.sym} 1500 -680 0 1 {name=p7 lab=VO_N}
 C {sky130_fd_pr/nfet_01v8_nf.sym} 1540 -450 0 0 {name=MN3
@@ -771,3 +770,9 @@ m=1
 value=0.8p
 footprint=1206
 device="ceramic capacitor"}
+C {devices/lab_pin.sym} 850 -380 0 0 {name=p8 sig_type=std_logic lab=vrref_sw}
+C {devices/res.sym} 850 -470 0 0 {name=RREF
+value=32k
+footprint=1206
+device=resistor
+m=1}
