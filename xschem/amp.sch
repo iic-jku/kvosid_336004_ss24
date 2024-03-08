@@ -749,16 +749,6 @@ sa=0 sb=0 sd=0
 model=nfet_01v8
 spiceprefix=X
 }
-C {devices/capa.sym} 1490 -520 1 0 {name=C6
-m=1
-value=0.8p
-footprint=1206
-device="ceramic capacitor"}
-C {devices/capa.sym} 1730 -520 1 0 {name=C7
-m=1
-value=0.8p
-footprint=1206
-device="ceramic capacitor"}
 C {devices/lab_pin.sym} 850 -380 0 0 {name=p8 sig_type=std_logic lab=vrref_sw}
 C {sky130_fd_pr/res_xhigh_po_0p35.sym} 850 -470 0 1 {name=RREF
 L=5.6
@@ -767,3 +757,5 @@ spiceprefix=X
 mult=1}
 C {/foss/designs/rstring_cm.sym} 1280 -410 2 0 {name=xr1}
 C {/foss/designs/rstring_cm.sym} 1560 -650 0 0 {name=xr2}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 1490 -520 3 0 {name=C6 model=cap_mim_m3_1 W=5 L=5 MF=16 spiceprefix=X}
+C {sky130_fd_pr/cap_mim_m3_1.sym} 1730 -520 3 0 {name=C7 model=cap_mim_m3_1 W=5 L=5 MF=16 spiceprefix=X}
