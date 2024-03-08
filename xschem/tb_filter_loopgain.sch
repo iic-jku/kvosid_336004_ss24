@@ -470,7 +470,7 @@ C {devices/lab_pin.sym} 1180 -610 3 0 {name=p7 sig_type=std_logic lab=vi_opa_p}
 C {devices/lab_pin.sym} 1180 -510 3 0 {name=p8 sig_type=std_logic lab=vi_opa_n}
 C {devices/lab_pin.sym} 1560 -600 1 0 {name=p9 sig_type=std_logic lab=vo_opa_n}
 C {devices/lab_pin.sym} 1560 -520 3 0 {name=p10 sig_type=std_logic lab=vo_opa_p}
-C {/foss/designs/amp.sym} 1180 -740 0 0 {name=xamp1}
+C {/foss/designs/xschem/amp.sym} 1180 -740 0 0 {name=xamp1}
 C {devices/vsource.sym} 420 -190 0 0 {name=V3 value=1.8
 }
 C {devices/gnd.sym} 420 -130 0 0 {name=l2 lab=GND}

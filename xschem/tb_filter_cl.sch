@@ -269,7 +269,7 @@ set wr_singlescale
 set wr_vecnames
 option numdgt=3
 
-set opSimOnly = 1
+set opSimOnly = 0
 
 
 ** Main Simulations
@@ -437,7 +437,7 @@ C {devices/vsource.sym} 1370 -600 3 0 {name=VIOP value=0
 }
 C {devices/vsource.sym} 1370 -520 3 1 {name=VION value=0
 }
-C {/foss/designs/amp.sym} 1000 -740 0 0 {name=xamp1}
+C {/foss/designs/xschem/amp.sym} 1000 -740 0 0 {name=xamp1}
 C {devices/vsource.sym} 440 -180 0 0 {name=V1 value=1.8
 }
 C {devices/gnd.sym} 440 -120 0 0 {name=l4 lab=GND}

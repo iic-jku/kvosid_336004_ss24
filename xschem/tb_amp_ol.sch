@@ -392,7 +392,7 @@ m=1
 value=1p
 footprint=1206
 device="ceramic capacitor"}
-C {/foss/designs/amp.sym} 740 -760 0 0 {name=xamp1}
+C {/foss/designs/xschem/amp.sym} 740 -760 0 0 {name=xamp1}
 C {devices/lab_pin.sym} 880 -710 1 0 {name=p1 sig_type=std_logic lab=di_pon}
 C {devices/capa.sym} 1140 -690 2 0 {name=CL1
 m=1
