@@ -76,13 +76,13 @@ lab=voutn1}
 N 980 -740 980 -710 {
 lab=voutn1}
 N 940 -610 980 -610 {
-lab=#net2}
+lab=vi_ota_p}
 N 980 -650 980 -610 {
-lab=#net2}
+lab=vi_ota_p}
 N 940 -510 980 -510 {
-lab=#net3}
+lab=vi_ota_n}
 N 980 -510 980 -470 {
-lab=#net3}
+lab=vi_ota_n}
 N 840 -410 840 -380 {
 lab=voutp1}
 N 840 -380 1160 -380 {
@@ -128,49 +128,49 @@ lab=GND}
 N 1230 -160 1230 -130 {
 lab=GND}
 N 1020 -610 1040 -610 {
-lab=#net2}
+lab=vi_ota_p}
 N 1020 -510 1040 -510 {
-lab=#net3}
+lab=vi_ota_n}
 N 1160 -380 1430 -380 {
 lab=voutp1}
 N 1160 -740 1430 -740 {
 lab=voutn1}
 N 980 -620 990 -610 {
-lab=#net2}
+lab=vi_ota_p}
 N 990 -610 1020 -610 {
-lab=#net2}
+lab=vi_ota_p}
 N 980 -500 990 -510 {
-lab=#net3}
+lab=vi_ota_n}
 N 990 -510 1020 -510 {
-lab=#net3}
+lab=vi_ota_n}
 N 840 -530 840 -470 {
-lab=#net4}
-N 840 -650 840 -590 {
-lab=#net5}
-N 790 -610 830 -610 {
-lab=#net5}
-N 830 -610 840 -620 {
-lab=#net5}
-N 840 -600 850 -610 {
-lab=#net5}
-N 850 -610 880 -610 {
-lab=#net5}
-N 790 -510 830 -510 {
-lab=#net4}
-N 830 -510 840 -520 {
-lab=#net4}
-N 840 -500 850 -510 {
-lab=#net4}
-N 850 -510 880 -510 {
-lab=#net4}
-N 1040 -610 1040 -600 {
 lab=#net2}
-N 1040 -520 1040 -510 {
+N 840 -650 840 -590 {
 lab=#net3}
+N 790 -610 830 -610 {
+lab=#net3}
+N 830 -610 840 -620 {
+lab=#net3}
+N 840 -600 850 -610 {
+lab=#net3}
+N 850 -610 880 -610 {
+lab=#net3}
+N 790 -510 830 -510 {
+lab=#net2}
+N 830 -510 840 -520 {
+lab=#net2}
+N 840 -500 850 -510 {
+lab=#net2}
+N 850 -510 880 -510 {
+lab=#net2}
+N 1040 -610 1040 -600 {
+lab=vi_ota_p}
+N 1040 -520 1040 -510 {
+lab=vi_ota_n}
 N 1310 -520 1340 -520 {
-lab=#net6}
+lab=vo_ota_p}
 N 1310 -600 1340 -600 {
-lab=#net7}
+lab=vo_ota_n}
 N 1430 -740 1430 -600 {
 lab=voutn1}
 N 1400 -600 1430 -600 {
@@ -241,8 +241,7 @@ save all
 let f_min = 10
 let f_max = 100Meg
 let f_stop = 500k
-let tper_sig = 1/f_sig
-let tfr_sig = tper_sig/2
+
 let Adc = 2
 let err_gain_spec = 0.004
 let v_step_o = 0.9
@@ -270,8 +269,11 @@ set wr_singlescale
 set wr_vecnames
 option numdgt=3
 
+set opSimOnly = 1
+
 
 ** Main Simulations
+if $opSimOnly eq 0
 	op
 	ac dec 100 $&const.f_min $&const.f_max
 	*set sqrnoise
@@ -331,7 +333,7 @@ option numdgt=3
 
 	plot vid vout1 vout vcmo
 	plot v(vip) v(vin) v(voutp1) v(voutn1) vcmo
-
+end
 
 alter @VIN[DC] = 0
 op
@@ -445,3 +447,7 @@ C {devices/lab_pin.sym} 520 -250 1 0 {name=p61 sig_type=std_logic lab=di_pon}
 C {devices/vdd.sym} 1180 -680 0 0 {name=l7 lab=VDD}
 C {devices/lab_pin.sym} 1140 -680 1 0 {name=p1 sig_type=std_logic lab=di_pon}
 C {devices/gnd.sym} 1180 -420 0 0 {name=l8 lab=GND}
+C {devices/lab_pin.sym} 1030 -610 1 0 {name=p7 sig_type=std_logic lab=vi_ota_p}
+C {devices/lab_pin.sym} 1030 -510 1 1 {name=p8 sig_type=std_logic lab=vi_ota_n}
+C {devices/lab_pin.sym} 1320 -600 1 0 {name=p9 sig_type=std_logic lab=vo_ota_n}
+C {devices/lab_pin.sym} 1320 -520 3 0 {name=p10 sig_type=std_logic lab=vo_ota_p}
