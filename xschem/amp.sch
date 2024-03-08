@@ -453,6 +453,10 @@ N 1430 -520 1460 -520 {
 lab=vo1_p}
 N 1430 -520 1430 -450 {
 lab=vo1_p}
+N 870 -470 920 -470 {
+lab=VSS}
+N 920 -470 920 -160 {
+lab=VSS}
 C {sky130_fd_pr/pfet_01v8_nf.sym} 870 -790 0 1 {name=MP1
 L=0.25
 W=5
@@ -774,8 +778,8 @@ value=0.8p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/lab_pin.sym} 850 -380 0 0 {name=p8 sig_type=std_logic lab=vrref_sw}
-C {devices/res.sym} 850 -470 0 0 {name=RREF
-value=32k
-footprint=1206
-device=resistor
-m=1}
+C {sky130_fd_pr/res_xhigh_po_0p35.sym} 850 -470 0 1 {name=RREF
+L=5.6
+model=res_xhigh_po_0p35
+spiceprefix=X
+mult=1}
