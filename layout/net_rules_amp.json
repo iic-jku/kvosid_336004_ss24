@@ -1,0 +1,36 @@
+[    
+    ["MinNetWireWidth",
+    {
+        "net" : "VO_P",
+        "min_width" : 28
+    }
+    ],
+    ["MinNetWireWidth",
+    {
+        "net" : "VO_N",
+        "min_width" : 28
+    }
+    ],
+    ["MinNetWireWidth",
+    {
+        "net" : "VDD",
+        "min_width" : 28
+    }
+    ],
+    ["MinNetWireWidth",
+    {
+        "net" : "VSS",
+        "min_width" : 28
+    }
+    ],
+    ["Ports",
+    {
+        "nets" : ["VSS", "VDD", "VI_P", "VI_N", "di_pon", "VO_N", "VO_P"]
+    }
+    ],
+    ["PowerNets",
+    {
+        "nets" : ["VSS", "VDD"]
+    }
+    ]        
+]
