@@ -280,7 +280,7 @@ if $opSimOnly eq 0
 	noise v(vout) VIN dec 100 $&const.f_min $&const.f_max 1
 	noise v(vout) VIN dec 100 1 50Meg
 	alter @VIN[PULSE] = [ 0 $&v_step_i $&t_delay $&t_rf $&t_rf $&t_step $&t_per 0 ]
-	** Check power on by ramping Vdd
+	** Check power on by ramping Vdd, tie di_pon to VDD net!
 	*alter @V1[PULSE] = [ 0 1.8 0 10u $&t_rf 0 0 0 ]
 	tran $&tstep $&tstop $&tstart
 		
