@@ -139,7 +139,7 @@ C {sky130_fd_pr/corner.sym} 190 -270 0 0 {name=CORNER only_toplevel=false corner
 C {devices/code.sym} 60 -270 0 0 {name=STIMULI
 only_toplevel=false
 value="
-.include /foss/designs/amp_dev_sav.spice
+.include /foss/designs/xschem/amp_dev_sav.spice
 .options savecurrents
 
 .save all
