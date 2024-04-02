@@ -13,6 +13,8 @@
         - `source .designinit`
     - Open a schematic with *Xschem*
         - e.g. `xschem xschem/tb_filter_cl.sch`
+    - Note: include path in `xschem/tb_amp_ol.sch` must be adjusted to
+      - `.include /foss/designs/kvosid_336004_ss24/xschem/amp_dev_sav.spice`
 
 2. Local Docker-based installation of *IIC-OSIC-TOOLS*
 
