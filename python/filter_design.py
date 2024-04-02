@@ -240,7 +240,7 @@ def main():
     c_diff_vec = np.array([C1, C3])
     c_se_vec = np.array([C2, CL])
     r_tot = 2 * np.sum(r_vec)
-    c_tot = 2 * np.sum(c_se_vec) + np.sum(c_diff_vec)
+    c_tot = 2 * np.sum(c_se_vec) + np.sum(c_diff_vec) / 2
 
     res = estimate_rc_chip_area_sky130(r_tot, c_tot)
     area_rtot_umsq = res['umsq']['R']
