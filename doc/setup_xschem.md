@@ -1,16 +1,16 @@
 # Setup *Xschem* Library Path 
 
-1. Personal virutal machine
+1. Personal virtual machine
     - Open terminal, go to `/foss/designs/`
         - `cd /foss/designs`
     - Clone Github-Repo to `/foss/design/`
         - `git clone https://github.com/iic-jku/kvosid_336004_ss24.git`
-    - Open `.designInit`
-        - e.g. `gedit .desingInit &`
+    - Open `.designinit`
+        - e.g. `gedit .designinit &`
     - Change `XSCHEM_USER_LIBRARY_PATH` to `/foss/design/kvosid_336004_ss24/xschem`
 
-    - Source `.designInit`
-        - `source .designInit`
+    - Source `.designinit`
+        - `source .designinit`
     - Open a schematic with *Xschem*
         - e.g. `xschem xschem/tb_filter_cl.sch`
 
