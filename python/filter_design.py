@@ -114,9 +114,9 @@ def main():
     # Define Filter Specs
     area_max_umsq = (100e-6 * 200e-6) / 1e-12   # max available chip area
 
-    osr = 10                                    # oversampling ratio
+    osr = 5                                    # oversampling ratio
     f_pass = 100e3                               # -3dB corner frequency
-    f_s = f_pass*osr                              # sampling frequency of the ADC
+    f_s = f_pass*2*osr                              # sampling frequency of the ADC
     f_stop = f_s / 2                              # start of stop band for filter approx.
     a_pass_db = 6.02                             # Pass-band gain
     a_pass = 10 ** (a_pass_db / 20.0)
