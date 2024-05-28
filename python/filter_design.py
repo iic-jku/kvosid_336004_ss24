@@ -114,9 +114,9 @@ def main():
     # Define Filter Specs
     area_max_umsq = (100e-6 * 200e-6) / 1e-12   # max available chip area
 
-    osr = 10                                    # oversampling ratio
+    osr = 5                                    # oversampling ratio
     f_pass = 100e3                               # -3dB corner frequency
-    f_s = f_pass*osr                              # sampling frequency of the ADC
+    f_s = f_pass*2*osr                              # sampling frequency of the ADC
     f_stop = f_s / 2                              # start of stop band for filter approx.
     a_pass_db = 6.02                             # Pass-band gain
     a_pass = 10 ** (a_pass_db / 20.0)
@@ -240,7 +240,7 @@ def main():
     c_diff_vec = np.array([C1, C3])
     c_se_vec = np.array([C2, CL])
     r_tot = 2 * np.sum(r_vec)
-    c_tot = 2 * np.sum(c_se_vec) + np.sum(c_diff_vec)
+    c_tot = 2 * np.sum(c_se_vec) + np.sum(c_diff_vec) / 2
 
     res = estimate_rc_chip_area_sky130(r_tot, c_tot)
     area_rtot_umsq = res['umsq']['R']
