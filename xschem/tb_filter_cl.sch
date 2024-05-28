@@ -278,7 +278,7 @@ if $opSimOnly eq 0
 	ac dec 100 $&const.f_min $&const.f_max
 	*set sqrnoise
 	noise v(vout) VIN dec 100 $&const.f_min $&const.f_max 1
-	noise v(vout) VIN dec 100 1 50Meg
+	noise v(vout) VIN dec 10 1 50Meg
 	alter @VIN[PULSE] = [ 0 $&v_step_i $&t_delay $&t_rf $&t_rf $&t_step $&t_per 0 ]
 	** Check power on by ramping Vdd, tie di_pon to VDD net!
 	*alter @V1[PULSE] = [ 0 1.8 0 10u $&t_rf 0 0 0 ]
@@ -314,8 +314,12 @@ if $opSimOnly eq 0
 	let r2 = sqrt(2)*onoise_r2
 	let r3 = sqrt(2)*onoise_r3
 	let r4 = sqrt(2)*onoise_r4
+	let diffpair = sqrt(2)*onoise.m.xamp1.xmp4.msky130_fd_pr__pfet_01v8
+	let load_n = sqrt(2)*onoise.m.xamp1.xmn1.msky130_fd_pr__nfet_01v8
+	let load_p = sqrt(2)*onoise.m.xamp1.xmp7.msky130_fd_pr__pfet_01v8
+	let comsource = sqrt(2)*onoise.m.xamp1.xmn3.msky130_fd_pr__nfet_01v8
 	*plot inoise_spectrum ylog xlog
-	plot onoise_spectrum r1 r2 r3 r4 ylog xlog ylabel 'Output Noise'
+	plot onoise_spectrum r1 r2 r3 r4 diffpair load_n load_p comsource ylog xlog ylabel 'Output Noise'
 	
 	setplot noise4
 	let p_noise_q = (1e-3)^2
